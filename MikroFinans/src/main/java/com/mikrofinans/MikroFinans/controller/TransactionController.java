@@ -1,6 +1,7 @@
 package com.mikrofinans.MikroFinans.controller;
 
 import com.mikrofinans.MikroFinans.model.Transaction;
+import com.mikrofinans.MikroFinans.model.request.TransactionsDTO;
 import com.mikrofinans.MikroFinans.service.TransactionService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +20,11 @@ public class TransactionController {
     public TransactionController(TransactionService transactionService) {
         this.transactionService = transactionService;
     }
-
     @PostMapping("/add")
-    public Transaction addTransaction(@Valid @RequestBody Transaction transaction) {
-        return transactionService.addTransaction(transaction);
+    public Transaction addTransaction(@Valid @RequestBody TransactionsDTO dto) {
+        return transactionService.addTransaction(dto);
     }
+
 
     @GetMapping("/all")
     public List<Transaction> getAllTransactions() {
