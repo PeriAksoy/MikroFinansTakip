@@ -19,22 +19,22 @@ public class CategoryController {
     public CategoryController(CategoryService categoryService) {
         this.categoryService = categoryService;
     }
-
-    @GetMapping("/all")
-    public List<Category> getAllCategories() {
-        return categoryService.getAllCategories();
-    }
-
-    @GetMapping("/{id}")
-    public Optional<Category> getCategoryById(@PathVariable Long id) {
-        return categoryService.getCategoryById(id);
-    }
-
+    //Kategori ekleme
     @PostMapping("/add")
     public Category createCategory(@Valid @RequestBody Category category) {
         return categoryService.addCategory(category);
     }
-
+    //Tüm kategorileri listeleme
+    @GetMapping("/all")
+    public List<Category> getAllCategories() {
+        return categoryService.getAllCategories();
+    }
+    //Id göre listeleme
+    @GetMapping("/{id}")
+    public Optional<Category> getCategoryById(@PathVariable Long id) {
+        return categoryService.getCategoryById(id);
+    }
+    //Kategori silme
     @DeleteMapping("/delete/{id}")
     public void deleteCategory(@PathVariable Long id) {
         categoryService.deleteCategory(id);

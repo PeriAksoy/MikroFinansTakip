@@ -20,21 +20,25 @@ public class TransactionController {
     public TransactionController(TransactionService transactionService) {
         this.transactionService = transactionService;
     }
+
+    //Gelir-Gider ekleme
     @PostMapping("/add")
     public Transaction addTransaction(@Valid @RequestBody TransactionsDTO dto) {
         return transactionService.addTransaction(dto);
     }
 
-
+    //Tüm Gelir-Gider listeleme
     @GetMapping("/all")
     public List<Transaction> getAllTransactions() {
         return transactionService.getAllTransactions();
     }
-
+    //Id göre listeleme
     @GetMapping("/{id}")
     public Optional<Transaction> getTransactionById(@PathVariable Long id) {
         return transactionService.getTransactionById(id);
     }
+
+    //Gelir-Gider silme
     @DeleteMapping("/delete/{id}")
     public void deleteTransaction(@PathVariable Long id) {
         transactionService.deleteTransaction(id);

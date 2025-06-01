@@ -1,6 +1,4 @@
 package com.mikrofinans.MikroFinans.model;
-
-import com.mikrofinans.MikroFinans.model.request.TransactionsDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

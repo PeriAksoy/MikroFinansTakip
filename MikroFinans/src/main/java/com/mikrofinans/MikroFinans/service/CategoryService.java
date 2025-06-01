@@ -17,19 +17,19 @@ public class CategoryService {
     public CategoryService(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
     }
-    //Category ekleme
+    //Kategori ekleme
     public Category addCategory(Category category) {
         return categoryRepository.save(category);
     }
-    //Category listeleme
+    //Kategori listeleme
     public List<Category> getAllCategories() {
         return categoryRepository.findAll();
     }
-    //İd göre listeleme
+    //Id göre listeleme
     public Optional<Category> getCategoryById(Long id) {
         return categoryRepository.findById(id);
     }
-    //Category silme
+    //Kategori silme
     public void deleteCategory(Long id) {
         categoryRepository.deleteById(id);
     }

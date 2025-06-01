@@ -6,10 +6,7 @@ import jakarta.validation.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 import java.util.List;
-
-import static com.mikrofinans.MikroFinans.repository.UserRepository.*;
 
 @Service
 public class UserService {

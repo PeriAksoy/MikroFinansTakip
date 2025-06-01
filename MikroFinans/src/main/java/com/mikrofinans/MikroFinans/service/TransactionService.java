@@ -52,17 +52,17 @@ public class TransactionService {
     }
 
 
-    // Gelir-Gider listeleme
+    //Gelir-Gider listeleme
     public List<Transaction> getAllTransactions() {
         return transactionRepository.findAll();
     }
 
-    // İşlem no'ya göre listeleme
+    //Id göre listeleme
     public Optional<Transaction> getTransactionById(Long id) {
         return transactionRepository.findById(id);
     }
 
-    // İşlem silme
+    //İşlem silme
     public void deleteTransaction(Long id) {
         transactionRepository.deleteById(id);
     }
